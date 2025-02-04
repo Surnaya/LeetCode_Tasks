@@ -14,15 +14,18 @@ Given a string s, return true if it is a palindrome, or false otherwise.
 Дана строка s. Верните true, если она является палиндромом, или false в противном случае."""
 
 
+# def isPalindrome(s):
+#     s = "".join(c for c in s.lower() if c.isalnum())  # оставляем только алфавитно-цифровые символы
+#     left, right = 0, len(s) - 1  # Два указателя: один в начале, другой в конце
+#     while left < right:
+#         if s[left] != s[right]:
+#             return False
+#         left += 1
+#         right -= 1
+#     return True
 def isPalindrome(s):
     s = "".join(c for c in s.lower() if c.isalnum())  # оставляем только алфавитно-цифровые символы
-    left, right = 0, len(s) - 1  # Два указателя: один в начале, другой в конце
-    while left < right:
-        if s[left] != s[right]:
-            return False
-        left += 1
-        right -= 1
-    return True
+    return s == s[::-1]
 
 
 # Example 1:
